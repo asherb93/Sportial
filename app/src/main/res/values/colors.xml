@@ -4,5 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="lightGreen">#86DCAA</color>
     <color name="lime">#00EC63</color>
+    <color name="greyLime">#2E704A</color>
 
 </resources>

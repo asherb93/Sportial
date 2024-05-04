@@ -48,8 +48,8 @@
                     android:layout_weight="1"
                     android:background="#B3FFFFFF"
                     android:ems="10"
-                    android:inputType="textEmailAddress"
-                    android:text="E-mail"
+                    android:hint="E-mail"
+                    android:textColorHint="@color/greyLime"
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             </LinearLayout>
@@ -68,7 +68,8 @@
                     android:background="#B3FFFFFF"
                     android:ems="10"
                     android:inputType="textPassword"
-                    android:text="Password"
+                    android:hint="Password"
+                    android:textColorHint="@color/greyLime"
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             </LinearLayout>

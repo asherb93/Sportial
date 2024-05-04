@@ -1,3 +1,55 @@
 <resources>
     <string name="app_name">Sportial</string>
+
+    <string-array name="dropbox_sportOptions">
+        <item>Please select a sport field you are interested in</item>
+        <item>Football</item>
+        <item>Basketball</item>
+        <item>Baseball</item>
+        <item>Soccer</item>
+        <item>Hockey</item>
+        <item>Tennis</item>
+        <item>Golf</item>
+        <item>Swimming</item>
+        <item>Running</item>
+        <item>Cycling</item>
+        <item>Hiking</item>
+        <item>Climbing</item>
+        <item>Yoga</item>
+        <item>Pilates</item>
+        <item>Zumba</item>
+        <item>CrossFit</item>
+        <item>Martial arts</item>
+        <item>Dance</item>
+        <item>Cheerleading</item>
+        <item>Gymnastics</item>
+        <item>Track and field</item>
+        <item>Volleyball</item>
+        <item>Lacrosse</item>
+        <item>Rowing</item>
+        <item>Sailing</item>
+        <item>Surfing</item>
+        <item>Skateboarding</item>
+        <item>Snowboarding</item>
+        <item>Skiing</item>
+        <item>Bobsledding</item>
+        <item>Luge</item>
+        <item>Skeleton</item>
+        <item>Curling</item>
+        <item>Biathlon</item>
+        <item>Triathlon</item>
+        <item>Duathlon</item>
+        <item>Aquathlon</item>
+        <item>Adventure racing</item>
+        <item>Obstacle course racing</item>
+    </string-array>
+
+    <string-array name="dropbox_genderOptions">
+        <item>Please select your gender</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+
+
 </resources>
