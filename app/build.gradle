@@ -49,6 +49,7 @@ dependencies {
     implementation libs.firebase.database
     implementation libs.firebase.auth
     implementation libs.firebase.crashlytics.buildtools
+    implementation libs.firebase.storage
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
@@ -59,5 +60,8 @@ dependencies {
         // For example, declare the dependencies for Firebase Authentication and Cloud Firestore
         implementation 'com.google.firebase:firebase-auth'
         implementation 'com.google.firebase:firebase-firestore'
+    // Add the dependency for the Cloud Storage library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation("com.google.firebase:firebase-storage")
 }
 
