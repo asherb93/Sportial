@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Create an Intent object with the target activity class
-                Intent intent = new Intent(MainActivity.this, ProfileCreationActivity.class);
+                Intent intent = new Intent(MainActivity.this, SignupActivity.class);
 
                 // Start the SignupActivity
                 startActivity(intent);
