@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.googleAndroidLibrariesMapsplatformSecretsGradlePlugin)
+    alias(libs.plugins.googleGmsGoogleServices)
 }
 
 android {
@@ -45,8 +46,17 @@ dependencies {
     implementation libs.play.services.maps
     implementation libs.retrofit
     implementation libs.converter.gson
+    implementation libs.firebase.database
+    implementation libs.firebase.auth
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
+        // Import the BoM for the Firebase platform
+        implementation platform('com.google.firebase:firebase-bom:33.0.0')
+
+        // Declare the dependencies for the desired Firebase products without specifying versions
+        // For example, declare the dependencies for Firebase Authentication and Cloud Firestore
+        implementation 'com.google.firebase:firebase-auth'
+        implementation 'com.google.firebase:firebase-firestore'
 }
 
