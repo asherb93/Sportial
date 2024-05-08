@@ -1,66 +1,13 @@
 package com.example.sportial;
-
-import java.io.File;
-import java.util.HashMap;
-
-enum Gender {Female, Male, Other};
-
+enum Gender {female, male, other};
 public class User {
-    private final String email;
-    private final String password;
-    private final String firstName;
-    private final String lastName;
-    private final String city;
-    private final String country;
-    private final Gender gender;
-    private final HashMap<SportType, Integer> sportTypes;
-    private final File profilePicture;
+    private String email;
+    private String password;
+    private String firstName;
+    private String lastName;
+    private String city;
+    private String country;
+    private Gender gender;
+    Arraylist <SportType> sportTypes;
 
-    public User(String email, String password, String firstName, String lastName, String city, String country, Gender gender, HashMap<SportType, Integer> sportTypes, File profilePicture) {
-        this.email = email;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.city = city;
-        this.country = country;
-        this.gender = gender;
-        this.sportTypes = sportTypes;
-        this.profilePicture = profilePicture;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public Gender getGender() {
-        return gender;
-    }
-
-    public HashMap<SportType, Integer> getSportTypes() {
-        return sportTypes;
-    }
-
-    public File getProfilePicture() {
-        return profilePicture;
-    }
 }
