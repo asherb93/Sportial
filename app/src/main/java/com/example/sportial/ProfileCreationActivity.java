@@ -3,6 +3,7 @@ package com.example.sportial;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telecom.Call;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -10,6 +11,10 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import java.io.PrintStream;
+
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,22 +33,7 @@ public class ProfileCreationActivity extends AppCompatActivity {
     private AutoCompleteTextView autoCompleteCity;
     private AutoCompleteTextView autoCompleteCountry;
 
-    private EditText firstNameEditText;
-    private EditText lastNameEditText;
 
-    private Spinner daySpinner;
-    private Spinner monthSpinner;
-    private Spinner yearSpinner;
-
-    private Spinner genderSpinner;
-
-    private Spinner sportSpinner;
-
-    private EditText countryEditText;
-
-    private EditText cityEditText;
-
-    private EditText zipCodeEditText;
 
 
 
@@ -96,13 +86,36 @@ public class ProfileCreationActivity extends AppCompatActivity {
 
         Button btnContinue = findViewById(R.id.create_profile_button);
 
+
+         EditText firstNameEditText = findViewById(R.id.firstNameEditText);
+         EditText lastNameEditText=findViewById(R.id.lastNameEditText) ;
+         Spinner daySpinner=findViewById(R.id.db_day);
+         Spinner monthSpinner=findViewById(R.id.db_month);;
+         Spinner yearSpinner=findViewById(R.id.db_year);;
+         Spinner genderSpinner;
+         Spinner sportSpinner;
+         EditText countryEditText;
+
         btnContinue.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+
+                String userFirstNameStr=firstNameEditText.getText().toString();
+                String userLastNameStr=firstNameEditText.getText().toString();
+                int userDay= (int) daySpinner.getSelectedItem();
+                System.out.println(userDay);
+
+                int userMonth;
+
+                int userYear;
+
+                String userSportStr;
+
                 // Create an Intent object with the target activity class
                 Intent intent = new Intent(ProfileCreationActivity.this, ImageUploadActivity.class);
 
-                // Start the SignupActivity
+                 //Start the SignupActivity
                 startActivity(intent);
             }
         });

@@ -35,7 +35,7 @@
 
         <EditText
             android:fontFamily="monospace"
-            android:id="@+id/editTextText"
+            android:id="@+id/firstNameEditText"
             android:layout_width="182dp"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -46,7 +46,7 @@
 
         <EditText
             android:fontFamily="monospace"
-            android:id="@+id/editTextText2"
+            android:id="@+id/lastNameEditText"
             android:layout_width="217dp"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
