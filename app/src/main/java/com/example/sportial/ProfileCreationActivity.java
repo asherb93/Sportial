@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +27,23 @@ public class ProfileCreationActivity extends AppCompatActivity {
 
     private AutoCompleteTextView autoCompleteCity;
     private AutoCompleteTextView autoCompleteCountry;
+
+    private EditText firstNameEditText;
+    private EditText lastNameEditText;
+
+    private Spinner daySpinner;
+    private Spinner monthSpinner;
+    private Spinner yearSpinner;
+
+    private Spinner genderSpinner;
+
+    private Spinner sportSpinner;
+
+    private EditText countryEditText;
+
+    private EditText cityEditText;
+
+    private EditText zipCodeEditText;
 
 
 
