@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
          Button btnSignUp = findViewById(R.id.signup_button);
+         Button btnLogin = findViewById(R.id.login_button);
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +45,12 @@ public class MainActivity extends AppCompatActivity {
 
                 // Start the SignupActivity
                 startActivity(intent);
+            }
+        });
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                onStart();
             }
         });
     }
@@ -71,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCustomToken:failure", task.getException());
-                            Toast.makeText(CustomAuthActivity.this, "Authentication failed.",
+                            Toast.makeText(MainActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
