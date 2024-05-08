@@ -29,7 +29,7 @@ public class FirebaseFunctions {
                     });
                 })
                 .addOnFailureListener(e -> {
-                    // Handle any errors that may occur
+                    // Handle any errors that may occur.s
                 });
     }
 }
