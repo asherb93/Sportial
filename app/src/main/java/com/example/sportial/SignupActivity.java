@@ -28,6 +28,10 @@ import com.google.firebase.database.FirebaseDatabase;
 public class SignupActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
+    private EditText emailEditText;
+    private EditText passwordEditText;
+    private EditText verifyPasswordEditText;
+    private Button signupButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,5 +43,26 @@ public class SignupActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        init();
     }
+
+    private void init() {
+        emailEditText = findViewById(R.id.editTextTextEmailAddress4);
+        verifyPasswordEditText = findViewById(R.id.editTextTextPassword2); // Use verifyPasswordEditText
+        passwordEditText = findViewById(R.id.editTextTextPassword3);
+        signupButton = findViewById(R.id.button2);
+        signupButton.setOnClickListener(L -> signUp());
+    }
+    private void signUp() {
+        String password = verifyPasswordEditText.getText().toString(); // Access here
+        String verifiedPassword = passwordEditText.getText().toString();
+        if(!password.equals(verifiedPassword)){
+            Toast.makeText(this, "Passwords must be identical", 2).show();
+        } else if (emailEditText.length() < 6) {
+            Toast.makeText(this, "Email address not valid", 2).show();
+        }else{
+            // create an account and move to profile creation activity
+        }
+    }
+
 }
