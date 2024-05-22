@@ -1,6 +1,7 @@
 package com.example.sportial;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -10,6 +11,8 @@ import android.widget.ImageView;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.IOException;
 
 public class ImageUploadActivity extends AppCompatActivity {
 
@@ -33,6 +36,11 @@ public class ImageUploadActivity extends AppCompatActivity {
                     if (result.getResultCode() == RESULT_OK) {
                         // Get the image URI from the result
                         Uri imageUri = result.getData().getData();
+                        try {
+                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
 
                         // Set the image URI to the ImageView
                         profileImageView.setImageURI(imageUri);

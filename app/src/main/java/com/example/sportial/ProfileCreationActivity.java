@@ -30,10 +30,6 @@ public class ProfileCreationActivity extends AppCompatActivity {
     private AutoCompleteTextView autoCompleteCity;
     private AutoCompleteTextView autoCompleteCountry;
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,21 +96,21 @@ public class ProfileCreationActivity extends AppCompatActivity {
                     String firstNameStr = firstNameEditText.getText().toString();
                     String lastNameStr = lastNameEditText.getText().toString();
                     int userBirthDay = Integer.parseInt(daySpinner.getSelectedItem().toString());
-                    int userBirthMonth = Integer.parseInt(monthSpinner.getSelectedItem().toString());
+                    String userBirthMonth = monthSpinner.getSelectedItem().toString();
                     int userBirthYear = Integer.parseInt(yearSpinner.getSelectedItem().toString());
                     String genderStr = genderSpinner.getSelectedItem().toString();
                     String sportStr = sportSpinner.getSelectedItem().toString();
                     String countryStr = countryEditText.getText().toString();
                     String cityStr = cityEditText.getText().toString();
-                    Toast.makeText(ProfileCreationActivity.this, firstNameStr + lastNameStr + userBirthDay + userBirthMonth + userBirthYear + genderStr + sportStr + countryStr +cityStr, Toast.LENGTH_SHORT).show();
                     // Create an Intent object with the target activity class
                     Intent intent = new Intent(ProfileCreationActivity.this, ImageUploadActivity.class);
                     // Start the SignupActivity
                     startActivity(intent);
                 }
                 catch (Throwable t) {
-                  //  Toast.makeText(ProfileCreationActivity.this, "Please fill up all fields ", Toast.LENGTH_SHORT).show();
-                }            }
+                    Toast.makeText(ProfileCreationActivity.this, "Please fill up all fields ", Toast.LENGTH_SHORT).show();
+                }
+            }
         });
 
 
