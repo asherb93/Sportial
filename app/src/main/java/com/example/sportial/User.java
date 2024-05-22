@@ -7,9 +7,7 @@ enum Gender {Female, Male, Other};
 
 public class User {
     private final String email;
-    private int birthDay;
-    private int birthMonth;
-    private int birthYear;
+    private final String password;
     private final String firstName;
     private final String lastName;
     private final String city;
@@ -20,6 +18,7 @@ public class User {
 
     public User(String email, String password, String firstName, String lastName, String city, String country, Gender gender, HashMap<SportType, Integer> sportTypes, File profilePicture) {
         this.email = email;
+        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.city = city;
@@ -33,6 +32,9 @@ public class User {
         return email;
     }
 
+    public String getPassword() {
+        return password;
+    }
 
     public String getFirstName() {
         return firstName;
