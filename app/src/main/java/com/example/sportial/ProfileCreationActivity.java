@@ -3,7 +3,6 @@ package com.example.sportial;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telecom.Call;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,11 +12,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.io.PrintStream;
-
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import android.widget.Toast;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -32,11 +29,6 @@ public class ProfileCreationActivity extends AppCompatActivity {
 
     private AutoCompleteTextView autoCompleteCity;
     private AutoCompleteTextView autoCompleteCountry;
-
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,38 +77,39 @@ public class ProfileCreationActivity extends AppCompatActivity {
 
 
         Button btnContinue = findViewById(R.id.create_profile_button);
-
-
-         EditText firstNameEditText = findViewById(R.id.firstNameEditText);
-         EditText lastNameEditText=findViewById(R.id.lastNameEditText) ;
-         Spinner daySpinner=findViewById(R.id.db_day);
-         Spinner monthSpinner=findViewById(R.id.db_month);;
-         Spinner yearSpinner=findViewById(R.id.db_year);;
-         Spinner genderSpinner;
-         Spinner sportSpinner;
-         EditText countryEditText;
+        EditText firstNameEditText=findViewById(R.id.firstNameEditText);
+        EditText lastNameEditText = findViewById(R.id.lastNameEditText);
+        Spinner daySpinner = findViewById(R.id.db_day);
+        Spinner monthSpinner = findViewById(R.id.db_month);
+        Spinner yearSpinner = findViewById(R.id.db_year);
+        Spinner genderSpinner =findViewById(R.id.db_gender) ;
+        Spinner sportSpinner = findViewById(R.id.db_sport);
+        EditText countryEditText = findViewById(R.id.ac_country);
+        EditText cityEditText = findViewById(R.id.ac_city);
 
         btnContinue.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-                String userFirstNameStr=firstNameEditText.getText().toString();
-                String userLastNameStr=firstNameEditText.getText().toString();
-                int userDay= (int) daySpinner.getSelectedItem();
-                System.out.println(userDay);
-
-                int userMonth;
-
-                int userYear;
-
-                String userSportStr;
-
-                // Create an Intent object with the target activity class
-                Intent intent = new Intent(ProfileCreationActivity.this, ImageUploadActivity.class);
-
-                 //Start the SignupActivity
-                startActivity(intent);
+                try {
+                    String firstNameStr = firstNameEditText.getText().toString();
+                    String lastNameStr = lastNameEditText.getText().toString();
+                    int userBirthDay = Integer.parseInt(daySpinner.getSelectedItem().toString());
+                    String userBirthMonth = monthSpinner.getSelectedItem().toString();
+                    int userBirthYear = Integer.parseInt(yearSpinner.getSelectedItem().toString());
+                    String genderStr = genderSpinner.getSelectedItem().toString();
+                    String sportStr = sportSpinner.getSelectedItem().toString();
+                    String countryStr = countryEditText.getText().toString();
+                    String cityStr = cityEditText.getText().toString();
+                    // Create an Intent object with the target activity class
+                    Intent intent = new Intent(ProfileCreationActivity.this, ImageUploadActivity.class);
+                    // Start the SignupActivity
+                    startActivity(intent);
+                }
+                catch (Throwable t) {
+                    Toast.makeText(ProfileCreationActivity.this, "Please fill up all fields ", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
